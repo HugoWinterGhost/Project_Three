@@ -1,0 +1,124 @@
+.header {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    background-color: var(--secondary);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+a:hover {
+    color: var(--primary-transparent);
+}
+
+/* First line : connexion & basket */
+
+.first-line {
+    display: inline-block;
+    width: 100%;
+}
+
+.connexion {
+    float: left;
+    font-family: "Open-sans-light";
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+    cursor: pointer;
+}
+
+.dropdown-item {
+    font-family: "Open-sans-light";
+    font-size: 0.9rem;
+  }
+
+.panier {
+    float: right;
+    color: var(--secondary);
+    font-size: 1.1rem;
+}
+
+.number-of-products {
+    font-size: 1rem;
+    font-family: "Open-sans-regular";
+}
+
+/* Logo */
+
+.logo-header {
+    padding-top: 0.5rem;
+}
+
+/*------------------------*/
+/*---- Media Queries ----*/
+/*----------------------*/
+
+/* mobile screens */
+@media screen and (max-width: 767px)
+{
+    h1 {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .connexion {
+        margin-left: 1rem;
+    }
+
+    .panier {
+        margin-right: 1rem;
+    }
+}
+
+/* tablet screens */
+
+@media screen and (min-width: 768px) and (max-width: 959px)
+{
+    .connexion {
+        margin-left: 5rem;
+    }
+
+    h1 {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .panier {
+        margin-right: 5rem;
+    }
+}
+
+/* tablet landscape & desktop screens */
+@media screen and (min-width: 960px) and (max-width: 1199px)
+{
+    .connexion {
+        margin-left: 5rem;
+    }
+
+    h1 {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .panier {
+        margin-right: 5rem;
+    }
+}
+
+/* large screens */
+@media screen and (min-width: 1200px)
+{
+    .connexion {
+        margin-left: 15rem;
+    }
+
+    h1 {
+        margin-top: 1.8rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .panier {
+        margin-right: 15rem;
+    }
+}

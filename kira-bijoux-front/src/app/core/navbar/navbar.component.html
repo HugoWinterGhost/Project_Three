@@ -1,0 +1,86 @@
+<!-- ROLE USER -->
+
+<nav *ngIf="!roleAdmin" class="navbar navbar-dark navbar-expand-sm bg-primary" id="navbar" #stickyMenu [class.sticky] = "sticky">
+
+    <!-- BUTTON NAVBAR MOBILE -->
+
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- NAVBAR -->
+  
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['home']" [routerLinkActive]="['active']" id="home-link">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['boutique/colliers']" [routerLinkActive]="['active']" id="colliers-link">COLLIERS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['boutique/bracelets']" [routerLinkActive]="['active']" id="bracelets-link">BRACELETS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['boutique/boucles-oreilles']" [routerLinkActive]="['active']" id="bo-link">BO</a>
+        </li>
+      </ul>
+
+      <!-- DROPDOWN "A PROPOS" -->
+
+      <div class="dropdown-divider"></div>
+        <div class="row">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <div class="a-propos" id="a-propos-dropdown" ngbDropdownToggle>A PROPOS</div>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem class="dropdown-item" [routerLink]="['a-propos/entretien-bijoux']" [routerLinkActive]="['active']" id="entretien-bijoux-link">Entretien des bijoux</button>
+                <button ngbDropdownItem class="dropdown-item" [routerLink]="['a-propos/la-marque']" [routerLinkActive]="['active']" id="marque-link">La marque</button>
+                <button ngbDropdownItem class="dropdown-item" [routerLink]="['lithotherapie']" [routerLinkActive]="['active']" id="lithotherapie-link">Lithothérapie</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+  
+</nav>
+
+<!-- ROLE ADMIN -->
+
+<nav *ngIf="roleAdmin" class="navbar navbar-dark navbar-expand-sm bg-primary" id="navbar_admin">
+
+  <!-- BUTTON NAVBAR MOBILE -->
+
+  <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- NAVBAR -->
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['administration/dashboard']" [routerLinkActive]="['active']" id="dashboard-link">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['gestion-produits']" [routerLinkActive]="['active']" id="boutique-link">Boutique</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['gestion-newsletters']" [routerLinkActive]="['active']" id="newsletters-link">Newsletters</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['gestion-commandes']" [routerLinkActive]="['active']" id="commandes-link">Commandes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['gestion-articles']" [routerLinkActive]="['active']" id="commandes-link">Articles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()" [routerLinkActive]="['active']" id="commandes-link">Déconnexion</a>
+      </li>
+    </ul>
+    
+    </div>
+
+</nav>
+  

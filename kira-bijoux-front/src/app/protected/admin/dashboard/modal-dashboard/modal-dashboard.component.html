@@ -1,0 +1,98 @@
+<div id="alert-modal-header" class="modal-header">
+    <h4 class="h4_admin" style="color: var(--primary)" id="edit-heading">
+        {{ keyWord }}</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+    (click)="cancel()">x
+    </button>
+</div>
+
+<div class="modal-body">
+    <div *ngIf="keyWord === indicatorUsers">
+        <div class="col-md-12" style = "overflow-x: scroll;" *ngIf="users">
+            <div class="smart-table-container">
+              <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+            </div>
+        </div>
+        <br/>
+        <div class="alert alert-success" id="alert-success" role="alert" *ngIf="deleteUserSuccess">
+            <span>L'utilisateur {{ deleteUserName }} a bien été supprimé !</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <p *ngIf="!users" style="color: var(--primary); margin-top: 2rem">Il n'y a pas encore d'utilisateur...</p>
+    </div>
+    <div *ngIf="keyWord === indicatorValidateOrder">
+        <div class="col-md-12" style = "overflow-x: scroll;" *ngIf="validateOrders.length > 0">
+            <div class="smart-table-container">
+              <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+            </div>
+        </div>
+        <p *ngIf="validateOrders.length == 0" style="color: var(--primary); margin-top: 2rem">Il n'y a pas encore eu de commande payée...</p>
+    </div>
+    <div *ngIf="keyWord === indicatorCa">
+        <div *ngIf="chiffreAffaires" style="text-align: center; margin: 20px 0;">
+          <canvas baseChart 
+            [datasets]="lineChartData" 
+            [labels]="lineChartLabels" 
+            [options]="lineChartOptions"
+            [colors]="lineChartColors" 
+            [legend]="lineChartLegend" 
+            [chartType]="lineChartType" 
+            [plugins]="lineChartPlugins">
+          </canvas>
+        </div>
+        <p *ngIf="!chiffreAffaires" style="color: var(--primary); margin-top: 2rem">Vous n'avez pas encore fait de chiffre d'affaires</p>
+    </div>
+    <div *ngIf="keyWord === indicatorStockedProducts">
+        <div class="col-md-12" style = "overflow-x: scroll;" *ngIf="stockedItems.length > 0">
+            <div class="smart-table-container">
+              <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+            </div>
+        </div>
+        <br/>
+            <div class="alert alert-success alert-dismissible fade show col col-12" role="alert" *ngIf=updateItemSuccess>
+                <span>Le bijou a bien été modifié !</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="alert alert-success" id="alert-success" role="alert" *ngIf="deleteItemSuccess">
+                <span>Le bijou a bien été supprimé !</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <p *ngIf="stockedItems.length == 0" style="color: var(--primary); margin-top: 2rem">Il n'y a plus de produit en stock !</p>
+    </div>
+    <div *ngIf="keyWord === indicatorCancelledOrders">
+        <div class="col-md-12" style = "overflow-x: scroll;" *ngIf="cancelledOrders.length > 0">
+            <div class="smart-table-container">
+              <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+            </div>
+        </div>        
+        <p *ngIf="cancelledOrders.length == 0" style="color: var(--primary); margin-top: 2rem">Aucune commande n'a été annulée !</p>
+    </div>
+    <div *ngIf="keyWord === indicatorUnstockedProducts">
+        <div class="col-md-12" style = "overflow-x: scroll;" *ngIf="unstockedItems.length > 0">
+            <div class="smart-table-container">
+              <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+            </div>
+        </div>        
+        <p *ngIf="unstockedItems.length == 0" style="color: var(--primary); margin-top: 2rem">Il n'y a plus de bijoux à fabriquer !</p>
+    </div>
+    <div *ngIf="keyWord === indicatorOrdersToPrepare">
+        <div class="col-md-12" style = "overflow-x: scroll;" *ngIf="ordersToPrepare.length > 0">
+            <div class="smart-table-container">
+              <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+            </div>
+        </div>        
+        <p *ngIf="ordersToPrepare.length == 0" style="color: var(--primary); margin-top: 2rem">Aucune commande à préparer !</p>
+    </div>
+</div>
+
+<div class="modal-footer" id="modal-footer">
+    <button id="close" type="close" class="btn btn-fourth col-3" data-dismiss="modal" (click)="cancel()">
+      <i class="fa fa-ban"></i><span> Fermer</span>
+    </button>
+  </div>

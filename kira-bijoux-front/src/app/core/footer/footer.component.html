@@ -1,0 +1,46 @@
+<footer class="footer" *ngIf="!roleAdmin" >
+
+  <!-- link to Instagram -->
+
+  <div class="instagram" id="instagram-link" placement="bottom" ngbTooltip="Suivez-nous sur Instagram">
+    <a href="https://www.instagram.com/kira.bijoux/" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+
+  <!-- nav footer -->
+
+  <div class="footer-nav">
+    <ul>
+      <li>
+        <a class="link" id="livraison-link" title="Livraison" routerLink="/livraison" routerLinkActive="active">Livraison</a>
+      </li>
+      <li>
+        <a class="link" id="conditions-retour-link" title="Conditions de retour" routerLink="/conditions-retour" routerLinkActive="active">Conditions de retour</a>
+      </li>
+      <li>
+        <a class="link" id="contact-link" title="Contact" routerLink="/contact" routerLinkActive="active">Contact</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- copyright -->
+
+  <div class="copyright">
+    &copy;
+    <span [innerText]="yearNow"></span>&nbsp;<span [innerText]="appTitle"></span>&nbsp;
+    <span>-&nbsp; <a routerLink="/mentions-legales" id="mentions-legales-link">Mentions légales</a></span>
+  </div>
+
+</footer>
+
+<footer class="footer_admin" *ngIf="roleAdmin" >
+
+  <!-- copyright -->
+
+  <div class="copyright_admin">
+    &copy;
+    <span>Copyright </span><span [innerText]="yearNow"></span>&nbsp;<span [innerText]="appTitle"></span>&nbsp;
+  </div>
+
+</footer>

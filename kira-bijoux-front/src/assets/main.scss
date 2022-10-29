@@ -1,0 +1,478 @@
+html {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: "Cinzel";
+  src: url('./Fonts/Cinzel-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: "Open-sans-light";
+  src: url('./Fonts/Open-sans/OpenSans-Light.ttf');
+}
+
+@font-face {
+  font-family: "Open-sans-regular";
+  src: url('./Fonts/Open-sans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: "Open-sans-semi-bold";
+  src: url('./Fonts/Open-sans/OpenSans-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: "Open-sans-bold";
+  src: url('./Fonts/Open-sans/OpenSans-Bold.ttf');
+}
+
+@font-face {
+  font-family: "Open-sans-italic";
+  src: url('./Fonts/Open-sans/OpenSans-Italic.ttf');
+}
+
+/* Custom style */
+
+main {
+    text-align: center;
+    width: 100%;
+    padding-top: 1.6rem;
+    padding-bottom: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 25rem;
+  }
+
+.main-user {
+  font-family: "Open-sans-regular";
+}
+
+.main_admin {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.visible-link {
+  text-decoration: underline dotted !important;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--primary);
+  padding-bottom: 1.6rem;
+  margin-bottom: 0rem;
+}
+
+.h2_user {
+  font-family: "Cinzel";
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-family: "Open-sans-light";
+  color: var(--primary);
+  padding-bottom: 1rem;
+  margin-bottom: 0rem;
+}
+
+h4 {
+  font-size: 1rem;
+  font-family: "Open-sans-light";
+  text-transform: uppercase;
+  color: var(--primary);
+  padding-bottom: 1rem;
+  margin-bottom: 0rem;
+}
+
+.h4_admin {
+  font-family: "Open-sans-regular" !important;
+}
+
+h5 {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+h6 {
+  font-size: 1rem;
+  font-family: "Open-sans-italic";
+  color: var(--primary);
+  padding-bottom: 1rem;
+  margin-bottom: 0rem;
+}
+
+.title-body {
+  border-bottom: solid 1px;
+  border-color: var(--primary);
+  margin-bottom: 2.2rem;
+}
+
+.inline-block i,
+.inline-block p {
+  display: inline-block;
+}
+
+.top-margin {
+  margin-top: 1rem;
+}
+
+.col-3 {
+  max-width: 100% !important;
+}
+
+/*------------------------*/
+/*-------- FORMS --------*/
+/*----------------------*/
+
+input[type="radio"] {
+  appearance: none;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  padding: 1px;
+  background-clip: content-box;
+  border: 2px solid #bbbbbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--primary);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  padding: 1px;
+  background-clip: content-box;
+  border: 2px solid #bbbbbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--primary);
+}
+
+textarea {
+  min-height: 8rem;
+}
+
+.form-control-label {
+  color: var(--primary);
+}
+
+.delete-btn {
+  background-color: #9e2020;
+  color: var(--secondary);
+}
+
+/*------------------------*/
+/*----- NAV & TABS ------*/
+/*----------------------*/
+
+.main-tab {
+  padding-top: 0rem !important;
+  padding-left: 0rem !important;
+  padding-right: 0rem !important;
+}
+
+.title-tab {
+  font-size: 1.2rem;
+  font-family: "Open-sans-light";
+  color: var(--secondary);
+  background-color: var(--primary);
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: -1px;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.nav-tabs {
+  margin-bottom: 2rem;
+}
+
+.tab-link {
+  width: 15rem;
+}
+
+.modal-admin {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/*------------------------*/
+/*----- NGBTOOLTIP ------*/
+/*----------------------*/
+
+.tooltip-inner {
+  background-color: var(--secondary);
+  color: var(--primary);
+  border: solid 0.2px;
+  border-color: var(--primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 0.68rem;
+}
+
+::ng-deep .bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before {
+  border-top-color: var(--secondary);
+}
+::ng-deep.bs-tooltip-right .arrow::before, .bs-tooltip-auto[x-placement^="right"] .arrow::before {
+  border-right-color: var(--secondary);
+}
+::ng-deep .bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+  border-bottom-color: var(--secondary);
+}
+::ng-deep.bs-tooltip-left .arrow::before, .bs-tooltip-auto[x-placement^="left"] .arrow::before {
+  border-left-color: var(--secondary);
+}
+
+/*------------------------*/
+/*-------- CARDS --------*/
+/*----------------------*/
+
+.card {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.2rem !important;
+  margin-bottom: 2rem;
+}
+
+.card-body {
+  padding-top: 0rem;
+}
+
+.card-content {
+  text-align: left !important;
+}
+
+.card-line {
+  margin-top: 0;
+  margin-bottom: 0rem;
+  font-size: 0.9rem;
+}
+
+.update-card {
+  margin-left: 90%;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--primary);
+}
+
+.update-card:hover {
+  cursor: pointer;
+}
+
+.card-password:hover {
+  cursor: pointer;
+}
+
+.modal-adresse {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 1rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
+}
+
+.card-columns {
+  column-count: 2 !important;
+}
+
+.add-adress {
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.add-article {
+  margin: 1rem;
+  cursor: pointer;
+  text-align: right;
+}
+
+/*----------------------------*/
+/*----- NG2-SMART-TABLE -----*/
+/*--------------------------*/
+
+.class-btn-details {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+a.ng2-smart-sort-link {
+  color: var(--primary) !important;
+  font-weight: 600 !important;
+}
+
+a.ng2-smart-page-link {
+  color: var(--primary) !important;
+}
+
+.ng2-smart-filter input {
+  text-align: center !important;
+}
+
+.ng2-smart-row {
+  cursor: pointer;
+}
+
+.ng2-smart-row.selected {
+  background-color: var(--primary-transparent) !important;
+  color: var(--secondary) !important;
+}
+
+table {
+  text-align: center !important;
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+/*----------------------------*/
+/*------- INDICATORS --------*/
+/*--------------------------*/
+
+.table-bordered-purple, .table-bordered-blue, .table-bordered-green, .table-bordered-red {
+  border: 2px solid #dee2e6;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  min-width: 12rem;
+  cursor: pointer;
+}
+
+.table-bordered-purple {
+  color: var(--primary);
+}
+
+.table-bordered-blue {
+  color: #048b9a;
+}
+
+.table-bordered-green {
+  color: #21b88b;
+}
+
+.table-bordered-red {
+  color: #9e2020;
+}
+
+.icon-purple {
+  color: var(--primary);
+}
+
+.icon-blue {
+  color: #048b9a;
+}
+
+.icon-green {
+  color: #21b88b;
+}
+
+.icon-red {
+  color: #9e2020;
+}
+
+.indicator-subtitle {
+  font-size: 0.8rem;
+  color: var(--fourth);
+}
+
+/*------------------------*/
+/*---- Media Queries ----*/
+/*----------------------*/
+  
+  /* mobile screens */
+  @media screen and (max-width: 575px)
+  {
+    main {
+      padding-right: 1rem;
+      padding-left: 1rem;
+      padding-bottom: 1rem;
+    }
+    .nav-tabs .nav-item {
+      border-top: #fff 1px solid;
+    }
+    .card-columns {
+      column-count: 1 !important;
+    }
+    li {
+      display: block !important;
+    }
+  }
+  
+  /* tablet screens */
+  @media screen and (min-width: 576px) and (max-width: 959px)
+  {
+    main {
+      padding-right: 2.5rem;
+      padding-left: 2.5rem;
+      padding-bottom: 3rem;
+    }
+    .main_admin {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+    .nav-tabs .nav-item {
+      border-top: #fff 1px solid;
+    }
+    .card-columns {
+      column-count: 1 !important;
+    }
+  }
+  
+  /* tablet landscape & desktop screens */
+  @media screen and (min-width: 960px) and (max-width: 1199px)
+  {
+    main {
+      padding-right: 4rem;
+      padding-left: 4rem;
+      padding-bottom: 4rem;
+    }
+    .main_admin {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+  }
+  
+  /* large screens */
+  @media screen and (min-width: 1200px)
+  {
+    main {
+      max-width: 62rem;
+      padding-right: 5rem;
+      padding-left: 5rem;
+    }
+    .main_admin {
+      max-width: 75rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+  }
+  

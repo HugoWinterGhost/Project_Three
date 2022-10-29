@@ -1,0 +1,91 @@
+<div>
+    <div class="title">
+      <h2 id="commandes">Dashboard</h2>
+    </div>
+
+    <div class="body">
+      <p>Toutes les informations concernant votre site e-commerce.</p>
+
+      <p style="margin-top: 1rem; margin-bottom: 2rem; font-size: 1rem; color: red; cursor: pointer" 
+      (click)="openIndicatorCardDialog(indicatorOrdersToPrepare)">Vous avez {{ ordersToPrepare.length }} commandes à préparer et/ou à envoyer !</p>
+
+      <div class="row justify-content-center flex" *ngIf="users && orders && chiffreAffaires">
+        <div class="col-3 text-center">
+          <app-indicator
+            [value]="users.length"
+            icon="users"
+            classToApply="table-bordered-blue"
+            label="Utilisateurs inscrits"
+            subtitle="depuis le lancement du site"
+            colorIcon="icon-blue"
+            (click)="openIndicatorCardDialog(indicatorUsers)"
+            ngbTooltip="Voir la liste des utilisateurs inscrits"
+          ></app-indicator>
+        </div>
+        <div class="col-3 text-center">
+          <app-indicator
+            [value]="orders.length"
+            icon="box-open"
+            classToApply="table-bordered-purple"
+            label="Commandes payées"
+            subtitle="à envoyer ou déjà reçues"
+            colorIcon="icon-purple"
+            (click)="openIndicatorCardDialog(indicatorValidateOrder)"
+            ngbTooltip="Voir les commandes payées"
+          ></app-indicator>
+        </div>
+        <div class="col-3 text-center">
+          <app-indicator
+            [value]="chiffreAffaires"
+            icon="chart-line"
+            classToApply="table-bordered-green"
+            label="Chiffre d'affaires"
+            subtitle="sur l'ensemble des ventes"
+            colorIcon="icon-green"
+            (click)="openIndicatorCardDialog(indicatorCa)"
+            ngbTooltip="Voir le détail du chiffre d'affaires"
+          ></app-indicator>
+        </div>
+      </div>
+
+      <div class="row justify-content-center flex" style="margin-top: 2rem;">
+        <div class="col-3 text-center">
+          <app-indicator
+            [value]="stockedItems?.length > 0 ? stockedItems?.length : '0'"
+            icon="gem"
+            classToApply="table-bordered-purple"
+            label="Produits disponibles"
+            subtitle="(4 ou plus en stock)"
+            colorIcon="icon-purple"
+            (click)="openIndicatorCardDialog(indicatorStockedProducts)"
+            ngbTooltip="Voir la liste des produits disponibles"
+          ></app-indicator>
+        </div>
+        <div class="col-3 text-center">
+          <app-indicator
+            [value]="cancelledOrders?.length > 0 ? cancelledOrders?.length : '0'"
+            icon="ban"
+            classToApply="table-bordered-red"
+            label="Commandes annulées"
+            subtitle="avant ou après réception"
+            colorIcon="icon-red"
+            (click)="openIndicatorCardDialog(indicatorCancelledOrders)"
+            ngbTooltip="Voir les commandes annulées"
+          ></app-indicator>
+        </div>
+        <div class="col-3 text-center">
+          <app-indicator
+            [value]="unstockedItems?.length > 0 ? unstockedItems?.length : '0'"
+            icon="calendar-plus"
+            classToApply="table-bordered-blue"
+            label="Produits à fabriquer"
+            subtitle="(moins de 4 en stock)"
+            colorIcon="icon-blue"
+            (click)="openIndicatorCardDialog(indicatorUnstockedProducts)"
+            ngbTooltip="Voir la liste des produits à fabriquer"
+          ></app-indicator>
+        </div>
+      </div>
+    </div>
+
+</div>
