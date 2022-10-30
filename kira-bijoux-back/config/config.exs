@@ -13,7 +13,7 @@ config :kira_bijoux,
 # Configures the endpoint
 config :kira_bijoux, KiraBijouxWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "q59Yw9W99mRNAyu+dlDgDpe/tUGs5auuKXJ7X3SNYWoE0jyvZpZeCOGWmxl4G48w",
+  secret_key_base: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
   render_errors: [view: KiraBijouxWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: KiraBijoux.PubSub,
   live_view: [signing_salt: "t1Teu373"]
